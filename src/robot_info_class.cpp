@@ -13,10 +13,11 @@ RobotInfo::RobotInfo(ros::NodeHandle &nh) : nh_(nh) {
 
 void RobotInfo::publish_data() {
     robotinfo_msgs::RobotInfo10Fields msg;
-    msg.data_field_01 = robot_description;
-    msg.data_field_02 = serial_number;
-    msg.data_field_03 = ip_address;
-    msg.data_field_04 = firmware_version;
+    msg.data_field_01 = "robot_description: " + getRobotDescription();
+    msg.data_field_02 = "serial_number: " + getSerialNumber();
+    msg.data_field_03 = "ip_address: " + getIpAddress();
+    msg.data_field_04 = "firmware_version: " + getFirmwareVersion();
+
 
     pub_.publish(msg);
 

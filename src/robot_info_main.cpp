@@ -1,5 +1,5 @@
 
-#include "robot_info_class.cpp" // Include the RobotInfo class
+#include "robot_info/robot_info_class.h" // Include the header file, not the cpp
 #include <ros/ros.h>
 
 int main(int argc, char **argv) {
@@ -11,10 +11,10 @@ int main(int argc, char **argv) {
   RobotInfo robotInfo(nh);
 
   // Set the robot info fields
-  robotInfo.setRobotDescription("Robot Brand XYZ");
-  robotInfo.setSerialNumber("SN1234567890");
-  robotInfo.setIpAddress("192.168.1.100");
-  robotInfo.setFirmwareVersion("v1.0.0");
+  robotInfo.setRobotDescription("Mir100");
+  robotInfo.setSerialNumber("567A359");
+  robotInfo.setIpAddress("169.254.5.180");
+  robotInfo.setFirmwareVersion("3.5.8");
 
   // Set the loop rate for publishing
   ros::Rate loop_rate(1); // 1 Hz

@@ -30,20 +30,20 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
+## Declare a shared library for the RobotInfo class
+add_library(robot_info_lib src/robot_info_class.cpp)
+
 ## Declare C++ executables
-add_executable(robot_info_node src/robot_info_main.cpp src/robot_info_class.cpp)
-add_executable(agv_robot_info_node src/agv_robot_info_class.cpp src/robot_info_class.cpp)
+add_executable(robot_info_node src/robot_info_main.cpp)
+add_executable(agv_robot_info_node src/agv_robot_info_class.cpp src/agv_robot_info_main.cpp)
 
-## Add dependencies to ensure messages are built before this node
-add_dependencies(robot_info_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-add_dependencies(agv_robot_info_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-
-## Specify libraries to link against
+## Link the library to both executables
 target_link_libraries(robot_info_node
+  robot_info_lib
   ${catkin_LIBRARIES}
 )
 
 target_link_libraries(agv_robot_info_node
+  robot_info_lib
   ${catkin_LIBRARIES}
 )
-

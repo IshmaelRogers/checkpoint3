@@ -12,6 +12,9 @@ int main(int argc, char **argv) {
     agvRobot.setSerialNumber("567A359");
     agvRobot.setIpAddress("169.254.5.180");
     agvRobot.setFirmwareVersion("3.5.8");
+    agvRobot.setHydraulicOilTemperature("45C");
+    agvRobot.setHydraulicOilTankFillLevel("100%");
+    agvRobot.setHydraulicOilPressure("250 bar");
 
     ros::Rate loop_rate(1);  // 1 Hz publishing rate
 

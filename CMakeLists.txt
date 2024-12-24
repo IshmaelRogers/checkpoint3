@@ -35,7 +35,7 @@ add_library(robot_info_lib src/robot_info_class.cpp)
 
 ## Declare C++ executables
 add_executable(robot_info_node src/robot_info_main.cpp)
-add_executable(agv_robot_info_node src/agv_robot_info_class.cpp src/agv_robot_info_main.cpp)
+add_executable(agv_robot_info_node src/agv_robot_info_class.cpp src/agv_robot_info_main.cpp src/hydraulic_system_monitor.cpp)
 
 ## Link the library to both executables
 target_link_libraries(robot_info_node
